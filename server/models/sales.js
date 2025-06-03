@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const {Schema} = require("mongoose");
 
-
-const sale = mongoose.Schema({
+const sale_Schema =  new mongoose.Schema({
 
     total_amount: {
         type: Number,
@@ -27,3 +26,5 @@ const sale = mongoose.Schema({
     }
 
 })
+const Sale = mongoose.model("Sale",sale_Schema)
+module.exports = Sale;
