@@ -22,7 +22,7 @@ const productSchmea = mongoose.schema({
         type: File,
         required: true,
     }
-})
+},{timestamps: true})
 
 const Proudct = mongoose.model("Proudct", productSchmea);
 

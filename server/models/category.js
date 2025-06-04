@@ -6,6 +6,8 @@ const category_Schema = mongoose.Schema({
         type:String,
         required:true,
     },
+},{
+    timestamps: true,
 })
 
 

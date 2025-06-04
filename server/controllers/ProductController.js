@@ -18,7 +18,7 @@ exports.GetAllProducts  = async (req, res) => {
 exports.AddProduct = async (req, res) => {
     const {name ,description ,price, img} = req.body
     try{
-        const product = new Prdouct(data)
+        const product = new Prdouct(name ,description ,price, img)
         await product.save();
         res.status(200).json(product)
     }
@@ -36,6 +36,10 @@ exports.EditProduct = async (req, res) => {
         if(!Product){
             res.status(404).json({error: 'Product not found'});
         }
+        Product.name = name;
+        Product.description = description;
+        Product.price = price;
+        await Product.save();
     }
     catch (err){
         console.error("Error editing product: ",err)

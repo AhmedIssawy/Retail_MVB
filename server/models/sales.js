@@ -25,6 +25,6 @@ const sale_Schema =  new mongoose.Schema({
         default: Date.now,
     }
 
-})
+},{timestamps: true})
 const Sale = mongoose.model("Sale",sale_Schema)
 module.exports = Sale;
